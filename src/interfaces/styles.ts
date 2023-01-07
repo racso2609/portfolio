@@ -1,9 +1,9 @@
-export interface GeneralProps{
-  padding: string;
-  margin: string;
-  background: string;
-  color: string;
-  position: string;
-  height: string;
-  width: string;
+export interface GeneralProps {
+    padding: string;
+    margin: string;
+    background: string;
+    color: string;
+    position: string;
+    height: string;
+    width: string;
 }

@@ -1,27 +1,30 @@
 export const properties: any = {
-  padding: 'padding',
-  margin: 'margin',
-  color: "color",
-  background: "background",
-  position: 'position',
+    padding: 'padding',
+    margin: 'margin',
+    color: 'color',
+    background: 'background',
+    position: 'position',
+    fontSize: 'font-size',
 
-  alignItems: 'align-items',
-  justifyContent: 'justify-content',
+    alignItems: 'align-items',
+    justifyContent: 'justify-content',
 
-  gap: 'gap',
-  columns: 'grid-template-columns',
-  rows: 'grid-template-rows',
-  alignContent: 'align-content',
-  justifyItems: 'justify-items',
-}
+    gap: 'gap',
+    columns: 'grid-template-columns',
+    rows: 'grid-template-rows',
+    alignContent: 'align-content',
+    justifyItems: 'justify-items',
+};
 
-export const addStyles =(props: any)=> {
-  return Object.keys(props).map((key)=>{
-    const keys =  { prop: properties[key], value: props[key] };
-    if(keys.prop){
-      return `${keys.prop}: ${keys.value};`
-    }else{
-      return ""
-    }
-  }).join("\n")
-}
+export const addStyles = (props: any) => {
+    return Object.keys(props)
+        .map((key) => {
+            const keys = { prop: properties[key], value: props[key] };
+            if (keys.prop) {
+                return `${keys.prop}: ${keys.value};`;
+            } else {
+                return '';
+            }
+        })
+        .join('\n');
+};
