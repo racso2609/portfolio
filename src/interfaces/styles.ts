@@ -6,4 +6,6 @@ export interface GeneralProps {
     position: string;
     height: string;
     width: string;
+    fontSize: string;
+    display: string;
 }

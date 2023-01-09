@@ -1,11 +1,20 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import { Container } from './components/styled/containers';
-
+import NavBar from './components/NavBar';
+import NavBarWrapper from './components/NavBar/NavBarWrapper';
+import Home from './pages/Home';
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <NavBarWrapper />,
+        children: [{ path: '/', element: <Home /> }],
+    },
+]);
 function App() {
     return (
-        <Container padding="20px" margin="10px">
-            <span>Hello</span>
-        </Container>
+        <>
+            <RouterProvider router={router} />
+        </>
     );
 }
 
