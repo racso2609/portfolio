@@ -12,5 +12,6 @@ export const Button = styled.button<Partial<ButtonProps>>`
     background-color: blue;
     font-size: 1.2rem;
     font-weight: bold;
+    color: ${(props) => props.theme.fg};
     ${(props) => addStyles(props)};
 `;
