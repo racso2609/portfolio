@@ -14,7 +14,7 @@ interface propsType {
     children: ReactNode;
 }
 const ThemeProvider: FC<propsType> = ({ children }) => {
-    const [theme, setTheme] = useAtom < string > (themeAtom);
+    const [theme, setTheme] = useAtom<string>(themeAtom);
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
