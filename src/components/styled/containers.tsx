@@ -5,6 +5,7 @@ import { addStyles } from '../../utils/styled';
 export interface ContainerProps extends GeneralProps {
     alignItems: string;
     justifyContent: string;
+direction: string;
 }
 
 export interface GridProps extends GeneralProps {

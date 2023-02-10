@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { addStyles } from '../../utils/styled';
 import { Container, ContainerProps, GridProps } from '../styled/containers';
 import { Span, P } from '../styled/texts';
+import ThemeSelector from '../ThemeSelector';
 
 const navItems = [
     { name: 'projects', href: '/projects' },
@@ -50,6 +51,7 @@ const NavBar: FC = () => {
                         </NavbarItem>
                     );
                 })}
+                <ThemeSelector/>
             </NavbarItemsContainer>
         </Nav>
     );

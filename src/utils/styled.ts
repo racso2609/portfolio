@@ -10,10 +10,11 @@ export const properties: any = {
     lineHeight: 'line-height',
     fontFamily: 'font-family',
     textDecoration: 'textDecoration',
-  weight: 'font-weight',
+    weight: 'font-weight',
 
     alignItems: 'align-items',
     justifyContent: 'justify-content',
+  direction: 'flex-direction',
 
     gap: 'gap',
     columns: 'grid-template-columns',

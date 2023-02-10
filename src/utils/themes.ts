@@ -16,7 +16,9 @@ const darkTheme: theme = {
     bg2: 'gray',
     hover: 'blue',
 };
-export const themes: { default: theme, dark: theme } = {
+export const themes: { default: theme; dark: theme } = {
     default: defaultTheme,
     dark: darkTheme,
 };
+
+export const posibleThemes = Object.keys(themes);
