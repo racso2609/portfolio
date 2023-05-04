@@ -11,10 +11,11 @@ export const properties: any = {
     fontFamily: 'font-family',
     textDecoration: 'textDecoration',
     weight: 'font-weight',
+    textAlign: 'text-align',
 
     alignItems: 'align-items',
     justifyContent: 'justify-content',
-  direction: 'flex-direction',
+    direction: 'flex-direction',
 
     gap: 'gap',
     columns: 'grid-template-columns',
@@ -24,6 +25,11 @@ export const properties: any = {
 
     width: 'width',
     height: 'height',
+    minWidth: 'min-width',
+    minHeight: 'min-height',
+    overflow: 'overflow',
+    overflowX: 'overflow-x',
+    overflowY: 'overflow-y',
 };
 
 export const addStyles = (props: any) => {

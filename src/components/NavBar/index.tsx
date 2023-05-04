@@ -1,58 +1,64 @@
+import { faGear, faHome, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { addStyles } from '../../utils/styled';
-import { Container, ContainerProps, GridProps } from '../styled/containers';
-import { Span, P } from '../styled/texts';
+import { Container } from '../styled/containers';
+import { Icon } from '../styled/miscellany';
+import { Span } from '../styled/texts';
 import ThemeSelector from '../ThemeSelector';
 
 const navItems = [
-    { name: 'projects', href: '/projects' },
-    { name: 'about', href: '/about' },
+    { name: 'projects', href: '/laboral-experience', icon: faGear },
+    { name: 'about', href: '/about-me', icon: faUser },
 ];
 
-const NavbarItem = styled.li`
+const NavbarItem = styled(Link)`
     all: unset;
     width: auto;
-    margin: 0 10px;
     cursor: pointer;
-    padding: 10px 20px;
-    display: block;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    margin: 10px 0;
+
+    font-size: 20px;
     &:hover {
         text-decoration: underline;
         background-color: ${(props) => props.theme.hover};
     }
 `;
-const NavbarItemsContainer = styled.ul<Partial<ContainerProps>>`
-    all: unset;
-    display: flex;
-    ${(props) => addStyles(props)};
-`;
 
-const Nav = styled.nav<Partial<GridProps>>`
+const Nav = styled.nav`
     all: unset;
-    display: grid;
-    height: auto;
     background-color: ${(props) => props.theme.bg2};
-    ${(props) => addStyles(props)};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 10px;
 `;
 
 const NavBar: FC = () => {
     return (
-        <Nav columns=".2fr 1fr" padding="0 20px">
-            <Container>
-                <Span>logo</Span>
-            </Container>
-            <NavbarItemsContainer justifyContent="flex-end" width="100%">
+        <Nav>
+            <Container
+                direction="column"
+                justifyContent="center"
+                textAlign="center"
+            >
+                <NavbarItem to="/">
+                    <Icon icon={faHome} />
+                    <Span>logo</Span>
+                </NavbarItem>
                 {navItems.map((item, index) => {
                     return (
-                        <NavbarItem key={item.name + index}>
-                            <P>{item.name}</P>
+                        <NavbarItem to={item.href} key={item.name + index}>
+                            <Icon icon={item.icon} />
                         </NavbarItem>
                     );
                 })}
-                <ThemeSelector/>
-            </NavbarItemsContainer>
+            </Container>
+            <ThemeSelector />
         </Nav>
     );
 };
