@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../styled/containers';
 import { Icon } from '../styled/miscellany';
-import { Span } from '../styled/texts';
 import ThemeSelector from '../ThemeSelector';
 
 const navItems = [
@@ -20,7 +19,7 @@ const NavbarItem = styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 0;
+    padding: 10px 0px;
 
     font-size: 20px;
     &:hover {
@@ -35,7 +34,20 @@ const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 15px 10px;
+    padding: 15px 0;
+`;
+
+const LogoContainer = styled(Link)`
+    all: unset;
+    width: auto;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 20px 0;
+
+    font-size: 20px;
 `;
 
 const NavBar: FC = () => {
@@ -46,10 +58,9 @@ const NavBar: FC = () => {
                 justifyContent="center"
                 textAlign="center"
             >
-                <NavbarItem to="/">
+                <LogoContainer to="/">
                     <Icon icon={faHome} />
-                    <Span>logo</Span>
-                </NavbarItem>
+                </LogoContainer>
                 {navItems.map((item, index) => {
                     return (
                         <NavbarItem to={item.href} key={item.name + index}>
